@@ -1,1 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/VK-JAVA final.iml
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/
+git
+src/src.iml
+src/src/main/resources/
+src/src/test/

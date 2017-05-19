@@ -1,8 +1,9 @@
-package pro100denysko.command;
+package command;
 
 
 import com.vk.api.sdk.objects.users.User;
-import ukr.pro100denysko.Token;
+import res.Token;
+
 
 public class MiddleAgeCommand implements Command {
     private User user;
@@ -12,7 +13,7 @@ public class MiddleAgeCommand implements Command {
 
     public void execute() {
 
-        String URLFriends = link + token.getAccess_token();
+        String URLFriends = link + token.getAccessToken();
 
     }
 }

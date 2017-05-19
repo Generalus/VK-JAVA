@@ -1,6 +1,7 @@
-package pro100denysko.command;
+package command;
 
-import ukr.pro100denysko.Model.User;
+
+import model.User;
 
 public class GeneralGroupCommand implements Command {
     private User user;

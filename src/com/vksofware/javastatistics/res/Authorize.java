@@ -1,4 +1,4 @@
-package pro100denysko;
+package res;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,10 +7,12 @@ import java.net.URL;
 
 public class Authorize {
 
-    String URL1 = "https://api.vk.com/method/users.get?user_ids=";
+   /* String URL1 = "https://api.vk.com/method/users.get?user_ids=";
     String URL2 = "&fields=bdate&v=5.64";
     int index = 26154686;
-    String URLIndex = URL1 + index + URL2;
+    String URLIndex = URL1 + index + URL2;*/
+    int index = 26154686;
+    String URLIndex = String.format("https://api.vk.com/method/users.get?user_ids=", index, "&fields=bdate&v=5.64");
     HttpURLConnection connection = null;
 
     public void connector() {
@@ -32,8 +34,8 @@ public class Authorize {
                 }
                 System.out.println(sb.toString());
             }
-        } catch (
-                Exception ex) {
+        } catch (Exception ex) {
+            System.out.println(ex);
         }
     }
 }

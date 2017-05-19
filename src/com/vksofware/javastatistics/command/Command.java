@@ -1,4 +1,4 @@
-package pro100denysko.command;
+package command;
 
 public interface Command {
     public void execute();

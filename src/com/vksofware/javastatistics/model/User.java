@@ -1,4 +1,4 @@
-package pro100denysko.Model;
+package model;
 
 public class User {
     private String Name;

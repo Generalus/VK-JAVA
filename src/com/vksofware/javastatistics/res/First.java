@@ -1,4 +1,4 @@
-package pro100denysko;
+package res;
 
 import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
