@@ -6,15 +6,10 @@ public class Token {
     String log = "https://api.vk.com/method/friends.getOnline?v=5.52&accessToken=";
 
     public void autorize() {
-        if (accessToken.toString() == null) {
-            try {
-                throw new UnsupportedOperationException("Необходимо указать токен");
-            } catch (UnsupportedOperationException ex) {
-                System.out.println("Необходимо указать токен");
-            }
+        if (accessToken == null) {
+            throw new UnsupportedOperationException("Необходимо указать токен");
+
         }
-
-
     }
 
     public String getAccessToken() {
