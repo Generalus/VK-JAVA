@@ -11,3 +11,8 @@ git
 src/src.iml
 src/src/main/resources/
 src/src/test/
+javastatistics/javastatistics.iml
+javastatistics/pom.xml
+javastatistics/src/main/java/com/vksoftware/javastatistics/model/
+javastatistics/src/main/resources/
+javastatistics/src/test/

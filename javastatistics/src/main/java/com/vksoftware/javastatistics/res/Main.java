@@ -1,6 +1,8 @@
-package res;
+package com.vksoftware.javastatistics.res;
 
-import command.MiddleAgeCommand;
+
+
+import com.vksoftware.javastatistics.command.MiddleAgeCommand;
 
 import java.io.IOException;
 

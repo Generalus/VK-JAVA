@@ -1,4 +1,4 @@
-package res;
+package com.vksoftware.javastatistics.res;
 
 import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
