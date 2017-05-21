@@ -13,7 +13,7 @@ Token token = new Token();
 
     public void execute() {
 
-        String URLFriends = link + token.getAccessToken();
+        //String URLFriends = link + token.getAccessToken();
 
     }
 }
