@@ -17,6 +17,9 @@ public class Token {
         }
     }
 
+    private Token() {
+    }
+
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
