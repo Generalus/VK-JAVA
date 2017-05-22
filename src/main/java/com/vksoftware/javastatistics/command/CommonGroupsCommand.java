@@ -3,8 +3,7 @@ package com.vksoftware.javastatistics.command;
 
 
 
-public class GeneralGroupCommand implements Command {
-    //private User user;
+public class CommonGroupsCommand implements Command {
 
     public void execute() {
 
