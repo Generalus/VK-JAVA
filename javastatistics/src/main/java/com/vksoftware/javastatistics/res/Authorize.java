@@ -7,12 +7,12 @@ import java.net.URL;
 
 public class Authorize {
 
-   /* String URL1 = "https://api.vk.com/method/users.get?user_ids=";
+    /*String URL1 = "https://api.vk.com/method/users.get?user_ids=";
     String URL2 = "&fields=bdate&v=5.64";
     int index = 26154686;
     String urlIndex = URL1 + index + URL2;*/
     int index = 26154686;
-    String urlIndex = String.format("https://api.vk.com/method/users.get?user_ids=", index, "&fields=bdate&v=5.64");
+    String urlIndex = String.format("https://api.vk.com/method/users.get?user_ids=" + index + "&fields=bdate&v=5.64");
     HttpURLConnection connection = null;
 
     public void connector() {
