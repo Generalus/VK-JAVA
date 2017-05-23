@@ -13,6 +13,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+
+
+
     <dependencies>
         <dependency>
             <groupId>com.vk.api</groupId>
@@ -40,5 +43,53 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
+
+
+    <profiles>
+        <profile>
+            <id>build-zip-with-tool</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>jar-with-dependencies</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptorRefs>
+                                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                                    </descriptorRefs>
+                                    <archive>
+                                        <manifest>
+                                            <mainClass>com.vksoftware.javastatistics.Main</mainClass>
+                                        </manifest>
+                                    </archive>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>create-archive</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>TestServer-${project.version}</finalName>
+                                    <descriptor>${project.basedir}/src/main/resources/build.xml</descriptor>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 
 </project>
