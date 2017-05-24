@@ -14,5 +14,5 @@ java -jar ^
  -XX:+HeapDumpOnOutOfMemoryError ^
  -XX:+UnlockDiagnosticVMOptions ^
  -XX:+DebugNonSafepoints ^
-  TestServer-1.0-SNAPSHOT-jar-with-dependencies.jar
+  VKSoftware-statistic-1.0-SNAPSHOT-jar-with-dependencies.jar
 pause
