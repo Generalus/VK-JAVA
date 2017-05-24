@@ -81,7 +81,7 @@
                                     <goal>single</goal>
                                 </goals>
                                 <configuration>
-                                    <finalName>VKSoftware-statistic-${project.version}</finalName>
+                                    <finalName>VKSoftware-statistic</finalName>
                                     <descriptor>${project.basedir}/src/main/resources/build.xml</descriptor>
                                 </configuration>
                             </execution>
