@@ -1,10 +1,6 @@
 echo off
-title File Server
+title VKStatistcs
 cls
-
-goto start
-
-    write -Dserver_root_folder=... to config root folder
 
 :start
 
@@ -18,5 +14,5 @@ java -jar ^
  -XX:+HeapDumpOnOutOfMemoryError ^
  -XX:+UnlockDiagnosticVMOptions ^
  -XX:+DebugNonSafepoints ^
-  vkstat-1.0-SNAPSHOT-jar-with-dependencies.jar
+  TestServer-1.0-SNAPSHOT-jar-with-dependencies.jar
 pause
