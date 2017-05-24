@@ -1,10 +1,6 @@
 echo off
-title File Server
+title VKStatistcs
 cls
-
-goto start
-
-    write -Dserver_root_folder=... to config root folder
 
 :start
 
