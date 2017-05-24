@@ -7,25 +7,29 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.httpclient.HttpTransportClient;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 public class AppContext {
 
+    private static AppContext instance;
+    FileInputStream fis;
+    Properties property = new Properties();
     private UserActor actor;
     private VkApiClient vk;
 
-
-    private static AppContext instance;
+    private AppContext() {
+        TransportClient transportClient = HttpTransportClient.getInstance();
+        vk = new VkApiClient(transportClient, new Gson());
+        actor = new UserActor(askUserId(), askToken());
+    }
 
     public static AppContext getInstance() {
         if (instance == null) {
             instance = new AppContext();
         }
         return instance;
-    }
-
-    private AppContext() {
-        TransportClient transportClient = HttpTransportClient.getInstance();
-        vk = new VkApiClient(transportClient, new Gson());
-        actor = new UserActor(askUserId(), askToken());
     }
 
     public static void clear() {
@@ -41,14 +45,28 @@ public class AppContext {
     }
 
     private String askToken() {
-        throw new java.lang.UnsupportedOperationException("еще не реализовано");
-        // TODO: return "read value from properties";
+        try {
+            fis = new FileInputStream("src/main/resources/user.properties");
+            property.load(fis);
+        } catch (IOException e) {
+            System.err.println("ОШИБКА: Файл свойств отсуствует!");
+        }
+
+        return property.getProperty("token");
     }
 
 
     private Integer askUserId() {
-        throw new java.lang.UnsupportedOperationException("еще не реализовано");
-        //TODO: return read value from properties;
+        try {
+            fis = new FileInputStream("src/main/resources/user.properties");
+            property.load(fis);
+        } catch (IOException e) {
+            System.err.println("ОШИБКА: Файл свойств отсуствует!");
+        }
+
+        return Integer.parseInt(property.getProperty("user_id"));
     }
 
 }
+
+
