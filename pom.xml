@@ -80,7 +80,7 @@
                                     <goal>single</goal>
                                 </goals>
                                 <configuration>
-                                    <finalName>TestServer-${project.version}</finalName>
+                                    <finalName>VKSoftware-statistic-${project.version}</finalName>
                                     <descriptor>${project.basedir}/src/main/resources/build.xml</descriptor>
                                 </configuration>
                             </execution>
