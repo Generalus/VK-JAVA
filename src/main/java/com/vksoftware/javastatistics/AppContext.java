@@ -1,6 +1,5 @@
 package com.vksoftware.javastatistics;
 
-
 import com.google.gson.Gson;
 import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
@@ -8,16 +7,17 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.httpclient.HttpTransportClient;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Properties;
 
 public class AppContext {
 
     private static AppContext instance;
+
     private UserActor actor;
     private VkApiClient vk;
-    private Integer userid = Integer.parseInt(getUserPropertie().getProperty("user_id"));
-    private String userToken = getUserPropertie().getProperty("token");
+    private Properties properties;
+
     private AppContext() {
         TransportClient transportClient = HttpTransportClient.getInstance();
         vk = new VkApiClient(transportClient, new Gson());
@@ -45,7 +45,7 @@ public class AppContext {
 
     private String askToken() {
 
-        return userToken;
+        return properties.getProperty("token");
 
     }
 
@@ -53,20 +53,21 @@ public class AppContext {
     private Integer askUserId() {
 
 
-        return userid;
+        return Integer.parseInt(properties.getProperty("user_id"));
     }
 
-    private Properties getUserPropertie() {
+    private Properties getUserProperties() {
 
         FileInputStream fis;
-        Properties property = new Properties();
+        properties = new Properties();
         try {
             fis = new FileInputStream("src/main/resources/user.properties");
+            properties.load(fis);
 
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
         }
-        return property;
+        return properties;
     }
 
 }
