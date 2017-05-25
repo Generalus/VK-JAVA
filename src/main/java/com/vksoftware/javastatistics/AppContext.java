@@ -63,7 +63,6 @@ public class AppContext {
         } catch (IOException e) {
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
         }
-
         return Integer.parseInt(property.getProperty("user_id"));
     }
 
