@@ -6,16 +6,13 @@ import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.httpclient.HttpTransportClient;
-
 import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.Properties;
 
 public class AppContext {
 
     private static AppContext instance;
-    FileInputStream fis;
-    Properties property = new Properties();
     private UserActor actor;
     private VkApiClient vk;
 
@@ -45,25 +42,29 @@ public class AppContext {
     }
 
     private String askToken() {
-        try {
-            fis = new FileInputStream("src/main/resources/user.properties");
-            property.load(fis);
-        } catch (IOException e) {
-            System.err.println("ОШИБКА: Файл свойств отсуствует!");
-        }
 
-        return property.getProperty("token");
+        return getUserPropertie().getProperty("token");
+
     }
 
 
     private Integer askUserId() {
+
+
+        return Integer.parseInt(getUserPropertie().getProperty("user_id"));
+    }
+
+    private Properties getUserPropertie() {
+
+        FileInputStream fis;
+        Properties property = new Properties();
         try {
             fis = new FileInputStream("src/main/resources/user.properties");
-            property.load(fis);
-        } catch (IOException e) {
+
+        } catch (FileNotFoundException e) {
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
         }
-        return Integer.parseInt(property.getProperty("user_id"));
+        return property;
     }
 
 }
