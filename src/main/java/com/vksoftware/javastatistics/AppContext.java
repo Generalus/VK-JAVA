@@ -16,7 +16,8 @@ public class AppContext {
     private static AppContext instance;
     private UserActor actor;
     private VkApiClient vk;
-
+    private Integer userid = Integer.parseInt(getUserPropertie().getProperty("user_id"));
+    private String userToken = getUserPropertie().getProperty("token");
     private AppContext() {
         TransportClient transportClient = HttpTransportClient.getInstance();
         vk = new VkApiClient(transportClient, new Gson());
@@ -44,7 +45,7 @@ public class AppContext {
 
     private String askToken() {
 
-        return getUserPropertie().getProperty("token");
+        return userToken;
 
     }
 
@@ -52,7 +53,7 @@ public class AppContext {
     private Integer askUserId() {
 
 
-        return Integer.parseInt(getUserPropertie().getProperty("user_id"));
+        return userid;
     }
 
     private Properties getUserPropertie() {
