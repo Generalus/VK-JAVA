@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.httpclient.HttpTransportClient;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
