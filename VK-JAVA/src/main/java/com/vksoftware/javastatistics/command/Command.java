@@ -1,5 +1,9 @@
 package com.vksoftware.javastatistics.command;
 
+import java.util.Scanner;
+
 public interface Command {
-    void execute();
+    void execute(Scanner scanner);
+
+    String getName();
 }

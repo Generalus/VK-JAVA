@@ -11,11 +11,15 @@ import com.vksoftware.javastatistics.AppContext;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class MiddleAgeCommand implements Command {
+    public String getName() {
+        return "-f";
+    }
 
-    public void execute() {
+    public void execute(Scanner scanner) {
         AppContext context = AppContext.getInstance();
         VkApiClient vk = context.getVk();
         UserActor actor = context.getActor();
@@ -30,6 +34,7 @@ public class MiddleAgeCommand implements Command {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         /*
 
         try {
@@ -50,4 +55,5 @@ public class MiddleAgeCommand implements Command {
         */
 
     }
+
 }
