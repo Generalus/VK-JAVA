@@ -1,25 +1,16 @@
 package com.vksoftware.javastatistics.command;
 
 
-import com.vk.api.sdk.client.Lang;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
-import com.vk.api.sdk.queries.friends.FriendsAddListQuery;
-import com.vk.api.sdk.queries.friends.FriendsSearchQuery;
-import com.vk.api.sdk.queries.users.UserField;
 import com.vksoftware.javastatistics.AppContext;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class MiddleAgeCommand implements Command {
-    public String getName() {
-        return "-f";
-    }
 
-    public void execute(Scanner scanner) {
+    public void execute() {
         AppContext context = AppContext.getInstance();
         VkApiClient vk = context.getVk();
         UserActor actor = context.getActor();
